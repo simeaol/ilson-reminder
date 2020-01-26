@@ -4,5 +4,19 @@
   "main": "index.js",
   "repository": "https://github.com/simeaol/ilson-reminder.git",
   "author": "simeaol",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "totalvoice-node": "^1.8.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  },
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "start": "npm src/index.js"
+  }
 }
