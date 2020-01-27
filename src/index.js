@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 require('dotenv');
 
-const scheduler = require('../scheduler/reminder');
+const scheduler = require('./scheduler/reminder');
 
 const app = express();
 app.use(cors());
