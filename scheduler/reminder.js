@@ -1,12 +1,15 @@
 const api = require('../services/api');
 const { getJows, confirm } = require('../utils/jows');
 
+const dayInMillis = 1000 * 60 * 60 * 24;
+const hourInMillis = 1000 * 60 * 60;
+
 var notifications = [];
 
 function start(){
     console.log(`Starting scheduler...`);
-    setInterval(checkCalendar, 100000);
-    setInterval(checkPendingState, 50000);
+    setInterval(checkCalendar, dayInMillis);
+    setInterval(checkPendingState, hourInMillis);
 }
 
 
