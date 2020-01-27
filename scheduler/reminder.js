@@ -11,10 +11,10 @@ function start(){
 
 
 function checkCalendar(day){
-    console.log(`Checking calendar...${new Date}`);
+    console.log(`Checking calendar...${new Date()}`);
 
     const today = new Date();
-    const tomorrow = new Date(today);
+    const tomorrow = new Date(day | today);
     tomorrow.setDate(tomorrow.getDate() + 1);
 
     //0 for Sunday, 1 for Monday, 2 for Tuesday, 3 for Wednesday, 4 for Thursday, 5 for Friday, 6 for Saturday. More info: https://www.w3resource.com/javascript/object-property-method/date-getDay.php
@@ -39,8 +39,15 @@ const adviceNext = async()=>{
     }
 };
 
-async function findWhoIsTheNext(jows){
-    return jows.reduce((previos, next ) => { return previos.count < next.count ? previos : next}, {count: Number.MAX_VALUE});
+function findWhoIsTheNext(jows){
+    return new Promise((resolve, reject) =>{
+        try{
+            let jow = jows.reduce((previos, next ) => { return previos.count < next.count ? previos : next}, {count: Number.MAX_VALUE});
+            resolve(jow);
+        }catch(error){
+            reject(`cannot find who is the next one. error: ${error}`);
+        }
+    });
 }
 
 async function checkPendingState(){
