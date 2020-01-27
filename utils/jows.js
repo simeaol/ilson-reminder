@@ -2,7 +2,7 @@ const jows = [
     {
         id: 0,
         name: 'Simeao David Lamine',
-        phone: '',
+        phone: '19983028978',
         date: [Date],
         count: 2,
     },
@@ -10,7 +10,7 @@ const jows = [
     {
         id: 1,
         name: 'Macumbeiro',
-        phone: '',
+        phone: '3591616848',
         date: [Date],
         count: 0,
     },
@@ -18,7 +18,7 @@ const jows = [
     {
         id: 2,
         name: 'Chessus',
-        phone: '',
+        phone: '35999820583',
         date: [Date],
         count: 1,
     }
@@ -34,5 +34,6 @@ module.exports = {
 
         const index = jows.findIndex(jow => jow.id === id);
         jows[index].count = jows[index].count + 1;
+        jow[index]['date'].append(new Date());
     }
 };
