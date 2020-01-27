@@ -1,7 +1,7 @@
 const jows = [
     {
         id: 0,
-        name: 'Simeao David Lamine',
+        name: 'Simeão David Lamine',
         phone: '19983028978',
         date: [Date],
         count: 2,
@@ -12,7 +12,7 @@ const jows = [
         name: 'Macumbeiro',
         phone: '3591616848',
         date: [Date],
-        count: 0,
+        count: 1,
     },
 
     {
@@ -20,7 +20,23 @@ const jows = [
         name: 'Chessus',
         phone: '35999820583',
         date: [Date],
-        count: 1,
+        count: 0,
+    },
+
+    {
+        id: 3,
+        name: 'Cagão',
+        phone: '19991392848',
+        date: [Date],
+        count: 0,
+    },
+
+    {
+        id: 4,
+        name: 'Deidão',
+        phone: '19996139175',
+        date: [Date],
+        count: 0,
     }
 
 ];
