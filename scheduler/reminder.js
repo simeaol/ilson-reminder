@@ -9,8 +9,23 @@ function start(){
     setInterval(checkPendingState, 50000);
 }
 
-const checkCalendar = async()=>{
+
+function checkCalendarDay(day){
     console.log(`Checking calendar...${new Date}`);
+
+    const today = new Date();
+    const tomorrow = new Date(today);
+    tomorrow.setDate(tomorrow.getDate() + 1);
+
+    //0 for Sunday, 1 for Monday, 2 for Tuesday, 3 for Wednesday, 4 for Thursday, 5 for Friday, 6 for Saturday. More info: https://www.w3resource.com/javascript/object-property-method/date-getDay.php
+    if(tomorrow.getDate() == 3 || tomorrow.getDate() == 5){
+        adviceNext();
+    }
+   
+}
+
+
+const adviceNext = async()=>{    
     
     const jows = getJows();
     const jow =  await findWhoIsTheNext(jows);
@@ -38,7 +53,7 @@ async function checkPendingState(){
                 if(response.dados.resposta == 1){
                     console.log(`${notification.jow.name} confirm the availability.`);
                     notification.status = 'success';
-                    confirm(notification.jow)
+                    confirm(notification.jow);
                 }
 
                 if(response.dados.resposta == 2){
