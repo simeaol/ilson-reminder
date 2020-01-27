@@ -22,18 +22,18 @@ function checkCalendar(day){
 
     //0 for Sunday, 1 for Monday, 2 for Tuesday, 3 for Wednesday, 4 for Thursday, 5 for Friday, 6 for Saturday. More info: https://www.w3resource.com/javascript/object-property-method/date-getDay.php
     if(tomorrow.getDate() == 3 || tomorrow.getDate() == 5){
-        adviceNext();
+        notifyNextJow();
     }
    
 }
 
 
-const adviceNext = async()=>{    
+const notifyNextJow = async()=>{    
     
     const jows = getJows();
     const jow =  await findWhoIsTheNext(jows);
 
-    console.log(`Sua vez: ${jow.name}`);
+    console.log(`Your time buddy: ${jow.name}`);
     try{
         const response = await api.call(jow);
         notification.push(response);
